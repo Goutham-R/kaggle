@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy
-path_train="/home/goutham/kaggle/titanic/train.csv"
-path_test="/home/goutham/kaggle/titanic/test.csv"
+path_train="../titanic/train.csv"
+path_test="../titanic/test.csv"
 dt_train=pd.read_csv(path_train)
 dt_test=pd.read_csv(path_test)
 #print("*"*100)
