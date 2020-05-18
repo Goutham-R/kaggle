@@ -54,4 +54,3 @@ clf.fit(x_train,y_train)
 y_predict=clf.predict(x_test)
 from sklearn.metrics import classification_report
 print(classification_report(y_test,y_predict))
-
