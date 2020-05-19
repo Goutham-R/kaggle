@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy
-path_train="../titanic/train.csv"
-path_test="../titanic/test.csv"
+path_train="/home/goutham/kaggle/titanic/train.csv"
+path_test="/home/goutham/kaggle/titanic/test.csv"
 dt_train=pd.read_csv(path_train)
 dt_test=pd.read_csv(path_test)
 #print("*"*100)
@@ -51,6 +51,8 @@ y=dt_train.iloc[:,-1].values
 from sklearn.model_selection import train_test_split
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=69)
 clf.fit(x_train,y_train)
-y_predict=clf.predict(x_test)
-from sklearn.metrics import classification_report
-print(classification_report(y_test,y_predict))
+y_predict=clf.predict(dt_test)
+#from sklearn.metrics import classification_report
+#print(classification_report(y_test,y_predict))
+output = pd.DataFrame({'PassengerId': dt_test.PassengerId, 'Survived': y_predict})
+output.to_csv("output.csv",index=False)
