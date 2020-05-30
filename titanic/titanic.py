@@ -30,8 +30,8 @@ def age_group(dt):
     dt.loc[(dt["Age"]>40)&(dt["Age"]<=60),"AgeGroup"]=3
     dt.loc[(dt["Age"]>60),"AgeGroup"]=4
     return dt
-path_train="/home/goutham/kaggle/titanic/train.csv"
-path_test="/home/goutham/kaggle/titanic/test.csv"
+path_train="train.csv"
+path_test="test.csv"
 dt_train=pd.read_csv(path_train)
 dt_test=pd.read_csv(path_test)
 sns.set()
